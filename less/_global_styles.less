@@ -1,0 +1,205 @@
+
+main{
+  overflow: hidden;
+}
+
+/*****************************
+  Header Nav Bar
+******************************/
+nav.navbar{
+  z-index: 10000;
+  top: 0;
+  left: 0;
+  background-color: @softOrange;
+  
+  ul.navbar-nav.d-flex {
+    justify-content: space-evenly;
+
+    li.nav-item {
+
+      &:hover.hoverLine::after , &:hover.hoverLine::before{
+        width: 50%;
+      }
+
+      a.navbar-brand{
+        font-size: 1.5rem !important;
+      }
+
+      a.nav-link.nav-a  {
+        color: #fff;
+        font-size: 1.5rem !important;
+
+        &:hover.hoverLine::after , &:hover.hoverLine::before{
+        width: 45%;
+      }
+
+      }
+   }
+  }
+
+}
+
+/*****************************
+  Footer
+******************************/
+footer{
+  background-color: transparent;
+  padding: 1rem;
+  height: 200px;
+
+
+  div.d-flex{
+    max-width: 1400px;
+  
+
+    nav {
+
+      ul{
+        list-style: none;
+        margin-bottom: 0;
+
+        span{
+          color: @ironGrey !important;
+          padding: 0 1em;
+        }
+
+        li a.footerA{
+          color: @ironGrey !important;
+
+        &:hover{
+          color: @lightAqua !important;
+          text-decoration: none;
+        }
+
+        &:visited{
+          color: #fff;
+        }
+
+        }
+      }
+    }// end nav
+  }// end dif.d-flex
+
+  .leftTri{
+    #leftTri(orangered);
+    opacity: 0.5;
+    clip-path: polygon(0 100%, 100% 100%, 0 0);
+  }
+
+  .rightTri{
+    #rightTri(gold);
+    opacity: 0.5;
+    clip-path: polygon(0 100%, 100% 100%, 100% 0);
+  }
+} // end footer
+
+/*****************************
+  hero header
+******************************/
+
+header.hero{
+  height: 100vh;
+
+  div.jumbotron.jumbotron-fluid{
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+
+    @media @mb_desktop_up{
+    }
+  } // end jumbotron
+} // end header.hero
+
+/*****************************
+  Main
+******************************/
+
+
+/*****************************
+  Decorations
+******************************/
+#hoverLine(@bgc){
+ content: '';
+ width:0px;
+ height: 4px;
+ position: absolute;
+ left: 50%;
+ bottom: 0;
+ background-color: @bgc;
+ transition: all 0.4s;
+}
+
+.hoverLine::after{
+ content: '';
+ width:0px;
+ height: 4px;
+ position: absolute;
+ left: 50%;
+ bottom: 0;
+ background-color: @lightAqua;
+ transition: all 0.4s; 
+}
+
+// #hoverLine(@lightAqua);
+.hoverLine::before{
+ content: '';
+ width:0px;
+ height: 4px;
+ position: absolute;
+ left: 50%;
+ bottom: 0;
+ background-color: @lightAqua;
+ transition: all 0.4s; 
+  transform: rotate(180deg); /* make the line grow from right to left*/
+ transform-origin: left;
+}
+
+#bottomToRightTri(){
+  clip-path: polygon(0 50% , 0% 100%, 100% 100%);
+}
+
+#bottomToLeftTri(){
+  clip-path: polygon(100% 50%, 0% 100%, 100% 100%);
+}
+
+#topToRightTri(){
+  clip-path: polygon(100% 0, 0 0, 100% 50%);
+}
+
+#topToLeftTri(){
+  clip-path: polygon(100% 0, 0 0, 100% 50%);
+}
+
+#accentTri1(){
+  clip-path: polygon(50% 0, 0 0, 50% 60%);
+}
+
+#accentTri2(){
+  clip-path: polygon(50% 0, 50% 60%, 100% 0);
+}
+
+ #spacer(@pos: absolute ; @bgc){
+    position: @pos;
+    width: 100%;
+    background-color: @bgc;
+ }    
+
+#rightTri(@bgc){
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: @bgc;
+}
+
+#leftTri(@bgc){
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: @bgc;
+}
